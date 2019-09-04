@@ -35,10 +35,11 @@ let menuItems = [
 */
 
 
+const menuButton = document.querySelector('.menu-button');
+const body = document.body;
 
 function menuCreator(arr){
-  const menuButton = document.querySelector('.menu-button');
-
+  
   const menuDiv = document.createElement('div');
   menuDiv.classList.add('menu');
 
@@ -53,12 +54,14 @@ function menuCreator(arr){
   menuDiv.appendChild(uList);
 
   menuButton.addEventListener('click', () =>{
-    console.log('i got clicked');
     menuDiv.classList.toggle('menu--open');
   })
 
   return menuDiv;
 }
+
+const cup = menuCreator(menuItems);
+body.appendChild(cup);
 
 
 
